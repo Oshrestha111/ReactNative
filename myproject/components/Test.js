@@ -7,6 +7,7 @@ const Test = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.boldText}>Namaste {text} !!</Text>
+        <Text style={styles.boldText}>How was your day {text}?</Text>
       </View>
       <View>
         <TextInput
