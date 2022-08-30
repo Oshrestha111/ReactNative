@@ -6,12 +6,18 @@ const Test = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <Text style={styles.boldText}>pizza language translator</Text>
         <Text style={styles.boldText}>Namaste {text} !!</Text>
-        <Text style={styles.boldText}>How was your day {text}?</Text>
+        <Text style={styles.boldText}>
+          {text
+            .split(" ")
+            .map((word) => word && "🍕")
+            .join(" ")}
+        </Text>
       </View>
       <View>
         <TextInput
-          placeholder="enter your name"
+          placeholder="tero naam k ho bey?"
           style={styles.input}
           onChangeText={(newText) => setText(newText)}
           defaultValue={text}
@@ -35,7 +41,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 20,
     width: "100%",
-    height: 50,
+    height: 80,
     display: "flex",
     alignItems: "center",
   },
