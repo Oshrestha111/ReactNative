@@ -14,11 +14,11 @@ import TodoItem from "./components/TodoItem";
 
 export default function App() {
   const [todos, setTodos] = useState([
-    { text: "make a project reactNative", key: "1" },
+    { text: "make time for yourself", key: "1" },
     { text: "create an app", key: "2" },
     { text: "watch something", key: "3" },
     { text: "take meds", key: "4" },
-    { text: "baff liu", key: "5" },
+    { text: "eat in time", key: "5" },
   ]);
 
   const pressHandler = (key) => {
@@ -73,9 +73,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   content: {
+    flex: 1,
     padding: 40,
   },
   list: {
+    flex: 1,
     marginTop: 20,
   },
 });
