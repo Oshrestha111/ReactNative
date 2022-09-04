@@ -3,6 +3,7 @@ import About from "./components/about";
 import Home from "./components/home";
 import Review from "./components/review";
 import { useFonts } from "expo-font";
+import { globalStyles } from "./styles/global";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,20 +18,10 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       <Home />
       <Review />
       <About />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    // flex: 1,
-    // backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-});
