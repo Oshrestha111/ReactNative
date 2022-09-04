@@ -5,7 +5,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 const TodoItem = ({ item, pressHandler }) => {
   return (
     <View style={styles.item}>
-      <Text>{item.text}</Text>
+      <Text style={styles.text}>{item.text}</Text>
       <TouchableOpacity onPress={() => pressHandler(item.key)}>
         <MaterialIcons name="delete" size={24} color="grey" />
       </TouchableOpacity>
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderLeftColor: "#ADFF2F",
     borderLeftWidth: 6,
+  },
+  text: {
+    maxWidth: "90%",
   },
 });
 

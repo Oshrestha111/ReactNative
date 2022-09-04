@@ -21,10 +21,16 @@ export default function AddTodo({ submitHandler }) {
       <TextInput
         placeholder="new todo...."
         style={styles.input}
+        value={text}
         onChangeText={changeHandler}
       />
 
-      <TouchableOpacity onPress={() => submitHandler(text)}>
+      <TouchableOpacity
+        onPress={() => {
+          submitHandler(text);
+          setText("");
+        }}
+      >
         <Text style={{ paddingTop: 8 }}>
           <AntDesign name="pluscircle" size={32} color="green" />
         </Text>
