@@ -1,10 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
-const Review = ({ navigation }) => {
+const Review = ({ navigation, route }) => {
+  const { itemId, otherParam } = route.params;
   return (
     <View style={styles.container}>
       <Text style={styles.text}>this is review page</Text>
+      <Text style={styles.text}>Id:{itemId}</Text>
+      <Text style={styles.text}>parameters:{otherParam}</Text>
       <Button
         title="Go to Review again.."
         onPress={() => navigation.push("Review")}
@@ -12,6 +15,10 @@ const Review = ({ navigation }) => {
       <Button title="Goback" onPress={() => navigation.goBack()} />
       <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
       {/* or  onPress={() => navigation.popToTop()} */}
+      <Button
+        title="Create post"
+        onPress={() => navigation.navigate("CreatePost")}
+      />
     </View>
   );
 };

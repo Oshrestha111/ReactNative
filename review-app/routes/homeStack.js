@@ -3,20 +3,54 @@ import { NavigationContainer } from "@react-navigation/native";
 import Home from "../components/home";
 import Review from "../components/review";
 import About from "../components/about";
+import CreatePost from "../components/CreatePost";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator(); //creates a stack for navigation
 
 const HomeScreen = () => {
   return (
     <NavigationContainer initialRouteName="Home">
-      <Stack.Navigator>
+      <Stack.Navigator
+        mode="modal"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+        }}
+      >
         <Stack.Screen
           name="Home"
           component={Home}
-          //   options={{ title: "Overview" }}
+          options={{
+            title: "Movie ",
+            // headerStyle: {
+            //   backgroundColor: "#E0BBE4",
+            // },
+          }}
         />
-        <Stack.Screen name="Review" component={Review} />
-        <Stack.Screen name="About" component={About} />
+        <Stack.Screen
+          name="Review"
+          component={Review}
+          options={{
+            title: "Review Details ",
+            // headerStyle: {
+            //   backgroundColor: "#D291BC",
+            // },
+          }}
+        />
+        <Stack.Screen
+          name="About"
+          component={About}
+          options={{
+            title: "About",
+            headerStyle: {
+              backgroundColor: "#957DAD",
+              // height: 50, didnt work
+            },
+          }}
+        />
+        <Stack.Screen name="CreatePost" component={CreatePost} />
       </Stack.Navigator>
     </NavigationContainer>
   );
