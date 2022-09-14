@@ -5,6 +5,7 @@ import Review from "./components/review";
 import { useFonts } from "expo-font";
 import { globalStyles } from "./styles/global";
 import Navigation from "./routes/homeStack";
+import NavigationDrawer from "./routes/drawer";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,7 +20,8 @@ export default function App() {
   }
 
   return (
-    <Navigation />
+    // <Navigation />
+    <NavigationDrawer />
     // <View style={globalStyles.container}>
     //   <Home />
     //   <Review />
