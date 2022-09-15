@@ -4,42 +4,47 @@ import Home from "../components/home";
 import Review from "../components/review";
 import About from "../components/about";
 import CreatePost from "../components/CreatePost";
+import React from "react";
+import Header from "../shared/header";
 
 const Stack = createNativeStackNavigator(); //creates a stack for navigation
 
-const HomeScreen = () => {
+const HomeStack = () => {
   return (
-    <NavigationContainer initialRouteName="Home">
-      <Stack.Navigator
-        mode="modal"
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: "#f4511e",
-          },
-          headerTintColor: "#fff",
-        }}
-      >
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            title: "Movie ",
+    // <NavigationContainer initialRouteName="Home">
+    <Stack.Navigator
+      mode="modal"
+      // screenOptions={{
+      //   headerStyle: {
+      //     backgroundColor: "#f4511e",
+      //   },
+      //   headerTintColor: "#fff",
+      // }}
+    >
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={
+          {
+            // title: "Movie ",
+            // headerTitle: () => <Header />,
             // headerStyle: {
             //   backgroundColor: "#E0BBE4",
             // },
-          }}
-        />
-        <Stack.Screen
-          name="Review"
-          component={Review}
-          options={{
-            title: "Review Details ",
-            // headerStyle: {
-            //   backgroundColor: "#D291BC",
-            // },
-          }}
-        />
-        <Stack.Screen
+          }
+        }
+      />
+      <Stack.Screen
+        name="Review"
+        component={Review}
+        options={{
+          title: "Review Details ",
+          // headerStyle: {
+          //   backgroundColor: "#D291BC",
+          // },
+        }}
+      />
+      {/* <Stack.Screen
           name="About"
           component={About}
           options={{
@@ -49,14 +54,14 @@ const HomeScreen = () => {
               // height: 50, didnt work
             },
           }}
-        />
-        <Stack.Screen name="CreatePost" component={CreatePost} />
-      </Stack.Navigator>
-    </NavigationContainer>
+        /> */}
+      <Stack.Screen name="CreatePost" component={CreatePost} />
+    </Stack.Navigator>
+    // </NavigationContainer>
   );
 };
 
-export default HomeScreen;
+export default HomeStack;
 // const screens = {
 //   Home: {
 //     screen: Home,
