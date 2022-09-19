@@ -10,17 +10,23 @@ import React, { useEffect, useRef, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import Carousel from "react-native-snap-carousel";
-import { sliderData } from "../model/data";
+import { freeGames, paidGames, sliderData } from "../model/data";
 import BannerSlider from "../components/BannerSlider";
 import { windowWidth } from "../utils/Dimensions";
+import CustomSwitch from "../components/CustomSwitch";
+import ListItem from "../components/ListItem";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const [carousel, setCarousel] = useState(null);
   const isCarousel = useRef(null);
-  // const [index, setIndex] = useState(0);
+  const [gamesTab, setGamesTab] = useState(1);
 
   const renderItem = ({ item, index }) => {
     return <BannerSlider data={item} />;
+  };
+
+  const onSelectSwitch = (value) => {
+    setGamesTab(value);
   };
 
   return (
@@ -36,14 +42,16 @@ export default function HomeScreen() {
           <Text style={{ fontFamily: "robotoBold", fontSize: 18 }}>
             Hello Sohan Pratap Shrestha
           </Text>
-          <ImageBackground
-            source={require("../assets/images/user-profile.jpg")}
-            style={{
-              width: 35,
-              height: 35,
-            }}
-            imageStyle={{ borderRadius: 25 }}
-          />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <ImageBackground
+              source={require("../assets/images/user-profile.jpg")}
+              style={{
+                width: 35,
+                height: 35,
+              }}
+              imageStyle={{ borderRadius: 25 }}
+            />
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -93,7 +101,34 @@ export default function HomeScreen() {
           // onSnapToItem={(index) => setIndex(index)}
         />
 
-        <Text>hdjkfhdsj</Text>
+        <View style={{ marginVertical: 20 }}>
+          <CustomSwitch
+            selectionMode={1}
+            option1="Free to Play"
+            option2="Paid Games"
+            onSelectSwitch={onSelectSwitch}
+          />
+        </View>
+
+        {gamesTab == 1 &&
+          freeGames.map((item) => (
+            <ListItem
+              key={item.id}
+              source={item.poster}
+              title={item.title}
+              subtitle={item.subtitle}
+            />
+          ))}
+        {gamesTab == 2 &&
+          paidGames.map((item) => (
+            <ListItem
+              key={item.id}
+              source={item.poster}
+              title={item.title}
+              subtitle={item.subtitle}
+              price={item.price}
+            />
+          ))}
       </ScrollView>
     </SafeAreaView>
   );
