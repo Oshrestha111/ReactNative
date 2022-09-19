@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Button } from "react-native";
 import { globalStyles } from "../styles/global";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Slider from "./slider";
 // import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Home = ({ navigation, route }) => {
@@ -34,6 +35,8 @@ const Home = ({ navigation, route }) => {
       />
       <Text style={{ margin: 10 }}>Post: {route.params?.post}</Text>
       {/* <Text>{route.param ? `post Created:${route.params?.post}` : null}</Text> */}
+
+      <Slider />
     </View>
   );
 };

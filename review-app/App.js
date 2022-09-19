@@ -1,3 +1,5 @@
+import "./ignoreWarnings";
+import { registerRootComponent } from "expo";
 import { StyleSheet, Text, View } from "react-native";
 import About from "./components/about";
 import Home from "./components/home";
@@ -7,7 +9,7 @@ import { globalStyles } from "./styles/global";
 import Navigation from "./routes/homeStack";
 import NavigationDrawer from "./routes/drawer";
 
-export default function App() {
+function App() {
   const [fontsLoaded] = useFonts({
     "roboto-regular": require("./assets/fonts/Roboto-Regular.ttf"),
     "roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
@@ -29,3 +31,6 @@ export default function App() {
     // </View>
   );
 }
+
+AppRegistry.registerComponent("main", () => App);
+export default App;
