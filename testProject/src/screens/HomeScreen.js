@@ -13,16 +13,14 @@ import Carousel from "react-native-snap-carousel";
 import { sliderData } from "../model/data";
 import BannerSlider from "../components/BannerSlider";
 import { windowWidth } from "../utils/Dimensions";
-import Carousels from "../components/Carousel";
-// import Carousel from "react-material-ui-carousel";
 
 export default function HomeScreen() {
   const [carousel, setCarousel] = useState(null);
   const isCarousel = useRef(null);
-  // const [load, setLoad] = useState(false);
+  // const [index, setIndex] = useState(0);
 
-  const renderBanner = (item, index) => {
-    <BannerSlider data={item} />;
+  const renderItem = ({ item, index }) => {
+    return <BannerSlider data={item} />;
   };
 
   return (
@@ -36,7 +34,7 @@ export default function HomeScreen() {
           }}
         >
           <Text style={{ fontFamily: "robotoBold", fontSize: 18 }}>
-            Hello Sohan Pratap
+            Hello Sohan Pratap Shrestha
           </Text>
           <ImageBackground
             source={require("../assets/images/user-profile.jpg")}
@@ -86,37 +84,16 @@ export default function HomeScreen() {
         </View>
 
         <Carousel
-          ref={(c) => {
-            setCarousel(c);
-          }}
-          // ref={(c) => {
-          //   // console.log(c, "carousel:", this.carousel);
-          //   // this._carousel = c;
-          // }}
+          ref={isCarousel}
           data={sliderData}
-          layout={"default"}
-          renderItem={renderBanner}
+          renderItem={renderItem}
           sliderWidth={windowWidth - 40}
           itemWidth={300}
-          useScrollView={true}
+          loop={true}
+          // onSnapToItem={(index) => setIndex(index)}
         />
 
-        {/* <Carousel>
-          {sliderData.map((item, i) => (
-            <BannerSlider data={item} />
-          ))}
-        </Carousel> */}
-
-        {/* <Carousels /> */}
-        <BannerSlider
-          data={require("../assets/images/homescreen/game-1.jpeg")}
-        />
-        <BannerSlider
-          data={require("../assets/images/homescreen/game-2.jpeg")}
-        />
-        <BannerSlider
-          data={require("../assets/images/homescreen/game-3.png")}
-        />
+        <Text>hdjkfhdsj</Text>
       </ScrollView>
     </SafeAreaView>
   );
