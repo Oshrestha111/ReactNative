@@ -46,6 +46,7 @@ export default function LoginScreen({ navigation }) {
       >
         <Text
           style={{
+            flex: 1,
             color: "white",
             fontSize: 18,
             textAlign: "center",

@@ -32,7 +32,7 @@ export default function CustomSwitch({
         style={{
           flex: 1,
           backgroundColor: getSelectionMode == 1 ? "#AD40AF" : "#e4e4e4",
-          borderRadius: 18,
+          borderRadius: 16,
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -53,7 +53,7 @@ export default function CustomSwitch({
         style={{
           flex: 1,
           backgroundColor: getSelectionMode == 2 ? "#AD40AF" : "#e4e4e4",
-          borderRadius: 18,
+          borderRadius: 16,
           justifyContent: "center",
           alignItems: "center",
         }}
