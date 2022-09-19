@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./src/screens/HomeScreen";
 import { useFonts } from "expo-font";
+import LoginScreen from "./src/screens/LoginScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +13,7 @@ export default function App() {
     robotoRegular: require("./src/assets/fonts/Roboto-Regular.ttf"),
     robotoBold: require("./src/assets/fonts/Roboto-Bold.ttf"),
     robotoMedium: require("./src/assets/fonts/Roboto-Medium.ttf"),
+    RobotoMediumItallic: require("./src/assets/fonts/Roboto-MediumItalic.ttf"),
   });
 
   if (!fontsLoaded) {
@@ -21,6 +23,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Home"
           component={Home}
