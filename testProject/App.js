@@ -1,12 +1,9 @@
 import { StyleSheet } from "react-native";
 import ReactNative from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./src/screens/HomeScreen";
 import { useFonts } from "expo-font";
-import LoginScreen from "./src/screens/LoginScreen";
-
-const Stack = createNativeStackNavigator();
+import AuthStack from "./src/navigation/AuthStack";
+import AppStack from "./src/navigation/AppStack";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,18 +19,8 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
+      {/* <AuthStack /> */}
+      <AppStack />
     </NavigationContainer>
   );
 }
