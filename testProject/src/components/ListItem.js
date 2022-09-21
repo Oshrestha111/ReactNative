@@ -21,7 +21,8 @@ export default function ListItem({ source, title, subtitle, price }) {
           <Text
             numberOfLines={1}
             style={{
-              color: "#333",
+              // color: "#333",
+              color: "#F6EFE8",
               fontFamily: "robotoMedium",
               fontSize: 14,
             }}
@@ -30,7 +31,8 @@ export default function ListItem({ source, title, subtitle, price }) {
           </Text>
           <Text
             style={{
-              color: "#333",
+              // color: "#333",
+              color: "#F6EFE8",
               fontFamily: "robotoMedium",
               fontSize: 12,
               textTransform: "uppercase",

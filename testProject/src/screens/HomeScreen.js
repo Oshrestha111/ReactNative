@@ -30,7 +30,7 @@ export default function HomeScreen({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#101010" }}>
       <ScrollView style={{ padding: 20 }}>
         <View
           style={{
@@ -39,12 +39,14 @@ export default function HomeScreen({ navigation }) {
             marginBottom: 20,
           }}
         >
-          <Text style={{ fontFamily: "robotoBold", fontSize: 18 }}>
+          <Text
+            style={{ fontFamily: "robotoBold", fontSize: 18, color: "#F6EFE8" }}
+          >
             Hello Sohan Pratap Shrestha
           </Text>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <ImageBackground
-              source={require("../assets/images/user-profile.jpg")}
+              source={require("../assets/images/bgSohan.png")}
               style={{
                 width: 35,
                 height: 35,
@@ -70,7 +72,11 @@ export default function HomeScreen({ navigation }) {
             color="black"
             style={{ marginRight: 5, color: "#C6C6C6" }}
           />
-          <TextInput placeholder="Search" style={{ paddingHorizontal: 8 }} />
+          <TextInput
+            placeholder="Search"
+            placeholderTextColor="#EEF2E6"
+            style={{ paddingHorizontal: 8, color: "#fff" }}
+          />
         </View>
         <View
           style={{
@@ -79,12 +85,18 @@ export default function HomeScreen({ navigation }) {
             marginVertical: 15,
           }}
         >
-          <Text style={{ fontFamily: "robotoBold", fontSize: 16 }}>
+          <Text
+            style={{ fontFamily: "robotoBold", fontSize: 16, color: "#F6EFE8" }}
+          >
             Upcoming Games
           </Text>
           <TouchableOpacity onPress={() => {}}>
             <Text
-              style={{ fontFamily: "robotoBold", color: "green", fontSize: 16 }}
+              style={{
+                fontFamily: "robotoBold",
+                color: "3D8361",
+                fontSize: 16,
+              }}
             >
               See all
             </Text>

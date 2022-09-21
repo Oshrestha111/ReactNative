@@ -23,9 +23,9 @@ export default function AppStack() {
       drawerContent={(props) => <CustomDrawer {...props} />}
       screenOptions={{
         headerShown: false,
-        drawerActiveBackgroundColor: "#aa18ea",
-        drawerActiveTintColor: "#fff",
-        drawerInactiveTintColor: "#333",
+        drawerActiveBackgroundColor: "#1C6758",
+        drawerActiveTintColor: "#EEF2E6",
+        drawerInactiveTintColor: "#fff",
         drawerLabelStyle: {
           marginLeft: -22,
           fontFamily: "robotoMedium",
@@ -47,7 +47,7 @@ export default function AppStack() {
         component={ProfileScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Ionicons name="person-outline" size={22} color="black" />
+            <Ionicons name="person-outline" size={22} color={color} />
           ),
         }}
       />
@@ -56,7 +56,7 @@ export default function AppStack() {
         component={MessageScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Ionicons name="chatbox-ellipses-outline" size={22} color="black" />
+            <Ionicons name="chatbox-ellipses-outline" size={22} color={color} />
           ),
         }}
       />
@@ -65,7 +65,7 @@ export default function AppStack() {
         component={MomentsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Ionicons name="timer-outline" size={22} color="black" />
+            <Ionicons name="timer-outline" size={22} color={color} />
           ),
         }}
       />
@@ -74,7 +74,7 @@ export default function AppStack() {
         component={SettingsScreen}
         options={{
           drawerIcon: ({ color }) => (
-            <Ionicons name="settings-outline" size={22} color="black" />
+            <Ionicons name="settings-outline" size={22} color={color} />
           ),
         }}
       />

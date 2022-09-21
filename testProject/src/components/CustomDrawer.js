@@ -10,17 +10,17 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function CustomDrawer(props) {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: "#101010" }}>
       <DrawerContentScrollView
         {...props}
-        contentContainerStyle={{ backgroundColor: "#8200d6" }}
+        contentContainerStyle={{ backgroundColor: "#014a27" }}
       >
         <ImageBackground
-          source={require("../assets/images/menu-bg.jpeg")}
-          style={{ padding: 20 }}
+          source={require("../assets/images/bg1.jpg")}
+          style={{ padding: 14 }}
         >
           <Image
-            source={require("../assets/images/user-profile.jpg")}
+            source={require("../assets/images/bgSohan.png")}
             style={{
               height: 80,
               width: 80,
@@ -37,7 +37,6 @@ export default function CustomDrawer(props) {
               marginBottom: 4,
             }}
           >
-            {" "}
             Sohan Pratap Stha
           </Text>
           <View style={{ flexDirection: "row" }}>
@@ -53,19 +52,20 @@ export default function CustomDrawer(props) {
             <FontAwesome5 name="coins" size={16} color="white" />
           </View>
         </ImageBackground>
-        <View style={{ flex: 1, backgroundColor: "#fff", paddingTop: 10 }}>
+        <View style={{ flex: 1, backgroundColor: "#101010", paddingTop: 10 }}>
           <DrawerItemList {...props} />
         </View>
       </DrawerContentScrollView>
       <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: "#ccc" }}>
         <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 8 }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Ionicons name="share-social-outline" size={20} color="black" />
+            <Ionicons name="share-social-outline" size={20} color="#fff" />
             <Text
               style={{
                 marginLeft: 5,
                 fontSize: 15,
                 fontFamily: "robotoMedium",
+                color: "#fff",
               }}
             >
               Share
@@ -74,12 +74,13 @@ export default function CustomDrawer(props) {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 8 }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Ionicons name="exit-outline" size={20} color="black" />
+            <Ionicons name="exit-outline" size={20} color="#fff" />
             <Text
               style={{
                 marginLeft: 5,
                 fontSize: 15,
                 fontFamily: "robotoMedium",
+                color: "#fff",
               }}
             >
               Sign Out
