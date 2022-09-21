@@ -42,7 +42,7 @@ export default function HomeScreen({ navigation }) {
           <Text style={{ fontFamily: "robotoBold", fontSize: 18 }}>
             Hello Sohan Pratap Shrestha
           </Text>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <ImageBackground
               source={require("../assets/images/user-profile.jpg")}
               style={{

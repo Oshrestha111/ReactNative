@@ -5,6 +5,8 @@ import {
   DrawerItemList,
 } from "@react-navigation/drawer";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function CustomDrawer(props) {
   return (
@@ -55,8 +57,35 @@ export default function CustomDrawer(props) {
           <DrawerItemList {...props} />
         </View>
       </DrawerContentScrollView>
-      <View>
-        <Text>Custom drawer</Text>
+      <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: "#ccc" }}>
+        <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 8 }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Ionicons name="share-social-outline" size={20} color="black" />
+            <Text
+              style={{
+                marginLeft: 5,
+                fontSize: 15,
+                fontFamily: "robotoMedium",
+              }}
+            >
+              Share
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 8 }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Ionicons name="exit-outline" size={20} color="black" />
+            <Text
+              style={{
+                marginLeft: 5,
+                fontSize: 15,
+                fontFamily: "robotoMedium",
+              }}
+            >
+              Sign Out
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
