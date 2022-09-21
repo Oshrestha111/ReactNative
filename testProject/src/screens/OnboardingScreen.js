@@ -16,7 +16,7 @@ export default function OnboardingScreen({ navigation }) {
       <View style={{ marginTop: 100 }}>
         <Text
           style={{
-            fontFamily: "Inter-Bold",
+            // fontFamily: "Inter-Bold",
             fontWeight: "bold",
             fontSize: 30,
             color: "#20315f",
