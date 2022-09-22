@@ -10,7 +10,7 @@ export default function OnboardingScreen({ navigation }) {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#fff",
+        backgroundColor: "#101010",
       }}
     >
       <View style={{ marginTop: 100 }}>
@@ -19,7 +19,7 @@ export default function OnboardingScreen({ navigation }) {
             // fontFamily: "Inter-Bold",
             fontWeight: "bold",
             fontSize: 30,
-            color: "#20315f",
+            color: "#01B636",
           }}
         >
           GAMEON
@@ -34,7 +34,7 @@ export default function OnboardingScreen({ navigation }) {
       </View>
       <TouchableOpacity
         style={{
-          backgroundColor: "#AD40AF",
+          backgroundColor: "#3D8361",
           padding: 20,
           width: "90%",
           borderRadius: 10,
@@ -47,7 +47,7 @@ export default function OnboardingScreen({ navigation }) {
         <Text
           style={{
             flex: 1,
-            color: "white",
+            color: "#E3E3E3",
             fontSize: 18,
             textAlign: "center",
             fontWeight: "bold",
