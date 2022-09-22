@@ -7,7 +7,7 @@ import Facebook from "../assets/images/misc/facebook.svg";
 import Twitter from "../assets/images/misc/twitter.svg";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   return (
     <View style={{ flex: 1, backgroundColor: "#101010", paddingTop: 10 }}>
       <View style={{ paddingHorizontal: 40 }}>
@@ -171,7 +171,7 @@ export default function LoginScreen() {
         <Text style={{ color: "#ccc", fontFamily: "robotoRegular" }}>
           New to the app?
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
           <Text
             style={{
               color: "#3D8361",
