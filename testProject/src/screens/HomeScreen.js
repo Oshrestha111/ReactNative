@@ -46,7 +46,7 @@ export default function HomeScreen({ navigation }) {
           </Text>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <ImageBackground
-              source={require("../assets/images/bgSohan.png")}
+              source={require("../assets/images/user-profile1.jpg")}
               style={{
                 width: 35,
                 height: 35,
@@ -94,7 +94,7 @@ export default function HomeScreen({ navigation }) {
             <Text
               style={{
                 fontFamily: "robotoBold",
-                color: "3D8361",
+                color: "#3D8361",
                 fontSize: 16,
               }}
             >

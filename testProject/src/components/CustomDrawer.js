@@ -20,7 +20,7 @@ export default function CustomDrawer(props) {
           style={{ padding: 14 }}
         >
           <Image
-            source={require("../assets/images/bgSohan.png")}
+            source={require("../assets/images/user-profile1.jpg")}
             style={{
               height: 80,
               width: 80,
