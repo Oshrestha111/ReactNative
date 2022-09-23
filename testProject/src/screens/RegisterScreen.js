@@ -13,6 +13,8 @@ import Twitter from "../assets/images/misc/twitter.svg";
 import { MaterialIcons } from "@expo/vector-icons";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { SafeAreaView } from "react-native-safe-area-context";
+import InputField from "../components/InputField";
+import CustomButton from "../components/CustomButton";
 
 export default function RegisterScreen({ navigation }) {
   const [date, setDate] = useState("");
@@ -41,7 +43,7 @@ export default function RegisterScreen({ navigation }) {
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "#101010", paddingTop: 10 }}
     >
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
             paddingHorizontal: 40,
@@ -132,95 +134,28 @@ export default function RegisterScreen({ navigation }) {
         </View>
 
         <View style={{ paddingHorizontal: 40, marginTop: 8 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              borderBottomWidth: 1,
-              borderBottomColor: "#ccc",
-              alignItems: "center",
-              marginBottom: 18,
-              paddingBottom: 4,
-            }}
-          >
-            <MaterialIcons name="person-outline" size={20} color="#ccc" />
-            <TextInput
-              placeholder="Full Name"
-              placeholderTextColor="#ccc"
-              style={{
-                marginLeft: 8,
-                color: "#fff",
-              }}
-            />
-          </View>
-          <View
-            style={{
-              flexDirection: "row",
-              borderBottomWidth: 1,
-              borderBottomColor: "#ccc",
-              alignItems: "center",
-              marginBottom: 18,
-              paddingBottom: 4,
-            }}
-          >
-            <MaterialIcons name="alternate-email" size={20} color="#ccc" />
-            <TextInput
-              placeholder="Email ID"
-              placeholderTextColor="#ccc"
-              style={{
-                marginLeft: 8,
-                color: "#fff",
-              }}
-            />
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              borderBottomWidth: 1,
-              borderBottomColor: "#ccc",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: 18,
-              paddingBottom: 4,
-            }}
-          >
-            <View style={{ flexDirection: "row" }}>
-              <MaterialIcons name="lock-outline" size={20} color="#ccc" />
-              <TextInput
-                placeholder="Password"
-                placeholderTextColor="#ccc"
-                style={{
-                  marginLeft: 8,
-                  color: "#fff",
-                }}
-              />
-            </View>
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              borderBottomWidth: 1,
-              borderBottomColor: "#ccc",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: 18,
-              paddingBottom: 4,
-            }}
-          >
-            <View style={{ flexDirection: "row" }}>
-              <MaterialIcons name="lock-outline" size={20} color="#ccc" />
-              <TextInput
-                placeholder="Confirm Password"
-                placeholderTextColor="#ccc"
-                style={{
-                  marginLeft: 8,
-                  color: "#fff",
-                }}
-              />
-            </View>
-          </View>
-
+          <InputField
+            label={"Full Name"}
+            icon={
+              <MaterialIcons name="person-outline" size={20} color="#ccc" />
+            }
+          />
+          <InputField
+            label={"Email ID"}
+            icon={
+              <MaterialIcons name="alternate-email" size={20} color="#ccc" />
+            }
+          />
+          <InputField
+            label={"Password"}
+            icon={<MaterialIcons name="lock-outline" size={20} color="#ccc" />}
+            inputType={"password"}
+          />
+          <InputField
+            label={"Confirm Password"}
+            icon={<MaterialIcons name="lock-outline" size={20} color="#ccc" />}
+            inputType={"password"}
+          />
           <View
             style={{
               flexDirection: "row",
@@ -236,7 +171,7 @@ export default function RegisterScreen({ navigation }) {
                 <MaterialIcons name="date-range" size={20} color="#ccc" />
               </TouchableOpacity>
               <TextInput
-                style={{ color: "#ccc", marginLeft: 8 }}
+                style={{ color: "#ccc", marginLeft: 8, flex: 1 }}
                 value={getDateOfBirth()}
                 placeholder="Select Date of Birth"
                 placeholderTextColor="#ccc"
@@ -249,30 +184,8 @@ export default function RegisterScreen({ navigation }) {
               />
             </View>
           </View>
-          <View style={{ marginTop: 20 }}>
-            <TouchableOpacity
-              onPress={() => {}}
-              style={{
-                backgroundColor: "#3D8361",
-                borderRadius: 8,
-                // height: 50,
-                justifyContent: "center",
-                paddingTop: 12,
-                paddingBottom: 12,
-              }}
-            >
-              <Text
-                style={{
-                  textAlign: "center",
-                  color: "#fff",
-                  fontFamily: "robotoRegular",
-                  fontSize: 18,
-                }}
-              >
-                Register
-              </Text>
-            </TouchableOpacity>
-          </View>
+
+          <CustomButton label={"Register"} onPress={() => {}} />
 
           <View
             style={{
