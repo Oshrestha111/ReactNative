@@ -5,8 +5,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import React from "react";
-import Registration from "../assets/images/misc/registration.svg";
+import React, { useContext } from "react";
 import Login from "../assets/images/misc/login.svg";
 import Google from "../assets/images/misc/google.svg";
 import Facebook from "../assets/images/misc/facebook.svg";
@@ -15,8 +14,11 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import InputField from "../components/InputField";
 import CustomButton from "../components/CustomButton";
+import { AuthContext } from "../context/AuthContext";
 
 export default function LoginScreen({ navigation }) {
+  const { login } = useContext(AuthContext); //object destructuring
+
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "#101010", paddingTop: 10 }}
@@ -24,6 +26,7 @@ export default function LoginScreen({ navigation }) {
       <ScrollView>
         <View style={{ paddingHorizontal: 40 }}>
           <Login width={300} height={300} />
+          {/* <Text style={{ color: "#fff" }}>{test}</Text> */}
           <Text
             style={{
               color: "#fff",
@@ -51,7 +54,12 @@ export default function LoginScreen({ navigation }) {
             fieldButtonFunction={() => {}}
           />
 
-          <CustomButton label={"Login"} onPress={() => {}} />
+          <CustomButton
+            label={"Login"}
+            onPress={() => {
+              login();
+            }}
+          />
 
           <View style={{ marginTop: 22, alignItems: "center" }}>
             <Text style={{ color: "#979797" }}>Or, login with ....</Text>

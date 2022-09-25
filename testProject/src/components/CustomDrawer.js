@@ -1,5 +1,5 @@
 import { View, Text, ImageBackground, Image } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -7,8 +7,11 @@ import {
 import { FontAwesome5 } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
+import { AuthContext } from "../context/AuthContext";
 
 export default function CustomDrawer(props) {
+  const { logout } = useContext(AuthContext);
+
   return (
     <View style={{ flex: 1, backgroundColor: "#101010" }}>
       <DrawerContentScrollView
@@ -72,7 +75,12 @@ export default function CustomDrawer(props) {
             </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 8 }}>
+        <TouchableOpacity
+          onPress={() => {
+            logout();
+          }}
+          style={{ paddingVertical: 8 }}
+        >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Ionicons name="exit-outline" size={20} color="#fff" />
             <Text
