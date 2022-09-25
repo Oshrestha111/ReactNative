@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import {
   StyleSheet,
   Text,
@@ -11,6 +11,18 @@ import {
 import AddTodo from "./components/AddTodos";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
+
+export const AppContext = createContext();
+export const AppProvider = ({ children }) => {
+  const [test, setTest] = useState("learning auth context");
+  const [headerData, setHeaderData] = useState(" from Context");
+
+  return (
+    <AppContext.Provider value={{ test, headerData }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -44,26 +56,28 @@ export default function App() {
   };
 
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        Keyboard.dismiss();
-      }}
-    >
-      <View style={styles.container}>
-        <Header />
-        <View style={styles.content}>
-          <AddTodo submitHandler={submitHandler} />
-          <View style={styles.list}>
-            <FlatList
-              data={todos}
-              renderItem={({ item }) => (
-                <TodoItem item={item} pressHandler={pressHandler} />
-              )}
-            />
+    <AppProvider>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          Keyboard.dismiss();
+        }}
+      >
+        <View style={styles.container}>
+          <Header />
+          <View style={styles.content}>
+            <AddTodo submitHandler={submitHandler} />
+            <View style={styles.list}>
+              <FlatList
+                data={todos}
+                renderItem={({ item }) => (
+                  <TodoItem item={item} pressHandler={pressHandler} />
+                )}
+              />
+            </View>
           </View>
         </View>
-      </View>
-    </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback>
+    </AppProvider>
   );
 }
 

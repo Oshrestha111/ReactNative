@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { AppContext } from "../App";
 
 const TodoItem = ({ item, pressHandler }) => {
+  const { test } = useContext(AppContext);
+
   return (
     <View style={styles.item}>
       <Text style={styles.text}>{item.text}</Text>
       <TouchableOpacity onPress={() => pressHandler(item.key)}>
         <MaterialIcons name="delete" size={24} color="grey" />
       </TouchableOpacity>
+      {/* <Text>{test}</Text> learning context */}
     </View>
   );
 };
