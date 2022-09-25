@@ -1,10 +1,9 @@
 import { StyleSheet } from "react-native";
 import ReactNative from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import AuthStack from "./src/navigation/AuthStack";
-import AppStack from "./src/navigation/AppStack";
 import React from "react";
+import { AuthProvider } from "./src/context/AuthContext";
+import AppNav from "./src/navigation/AppNav";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,10 +18,9 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <AuthStack />
-      {/* <AppStack /> */}
-    </NavigationContainer>
+    <AuthProvider>
+      <AppNav />
+    </AuthProvider>
   );
 }
 
